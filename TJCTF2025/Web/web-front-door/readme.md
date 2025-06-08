@@ -50,7 +50,7 @@ sau khi tôi thử tạo 1 tài khoản bất kì , tôi đã nhận được 1 
 Và mục tiêu của chúng ta chính là đổi mục 
 `"admin": "false"` trở thành   `"admin": "true"`
 
-Và bên trên có chính là thật toán mã hóa JWT tự chế của tác giả  -))
+Và bên trên có chính là thuật toán mã hóa JWT tự chế của tác giả  -))
 Bây giờ chúng ta phải từ cookie vừa có được , đi ngược lại để tìm ra được JWT-key
 
 # **EXPLOIT**
