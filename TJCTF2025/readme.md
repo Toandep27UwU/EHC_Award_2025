@@ -1,6 +1,6 @@
 # TJCTF2025
 
-## Crypto
+## Cryptography
 1. bacon-bits
 2. alchemist-recipe
 3. theartofwar
