@@ -2,7 +2,7 @@
 
 ## Cryptography
 1. bacon-bits
-2. alchemist-recipe
+2. [alchemist-recipe](https://github.com/Toandep27UwU/EHC_Award_2025/tree/main/TJCTF2025/Cryptography/alchemist-recipe)
 3. theartofwar
 4. seeds
 5. close-secrets
