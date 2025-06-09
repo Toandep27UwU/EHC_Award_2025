@@ -1,7 +1,7 @@
 # TJCTF2025
 
 ## Cryptography
-1. bacon-bits
+1. [bacon-bits](https://github.com/Toandep27UwU/EHC_Award_2025/tree/main/TJCTF2025/Cryptography/bacon-bits)
 2. [alchemist-recipe](https://github.com/Toandep27UwU/EHC_Award_2025/tree/main/TJCTF2025/Cryptography/alchemist-recipe)
 3. theartofwar
 4. seeds
