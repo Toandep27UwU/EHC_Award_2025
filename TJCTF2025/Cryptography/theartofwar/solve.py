@@ -4,7 +4,7 @@ n = []
 c = []
 e = None
 
-with open(r"E:\CTF\TJCTF2025\Cryptography\theartofwar\output.txt", "r") as f:
+with open("output.txt", "r") as f:
     for line in f:
         line = line.strip()
         if line.startswith("e ="):
@@ -40,4 +40,4 @@ def CRT(a: list, m:list)->int:
 
 m_pow_e = CRT(c, n)
 m = iroot(m_pow_e, e)[0]
-print("Decrypted message:", long_to_bytes(int(m)).decode())
+print(long_to_bytes(int(m)).decode())
