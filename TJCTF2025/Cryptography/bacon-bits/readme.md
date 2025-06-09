@@ -16,7 +16,7 @@
 ## Solution
 1. Đầu tiên ta cần tìm được `text.txt`
 ```python
-f = open('E:\CTF\TJCTF2025\Cryptography\bacon-bits\out.txt','r')
+f = open('out.txt','r')
 out = f.read()
 pre_out = ''.join([chr(ord(i)+13) for i in out])
 print(pre_out)
