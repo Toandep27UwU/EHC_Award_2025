@@ -1,10 +1,10 @@
 # bacon-bits
 ## Description
-![description](E:\CTF\TJCTF2025\Cryptography\bacon-bits\description.png)
+![description](description.png)
 
-[enc.py](E:\CTF\TJCTF2025\Cryptography\bacon-bits\enc.py)
+[enc.py](enc.py)
 
-[out.txt](E:\CTF\TJCTF2025\Cryptography\bacon-bits\out.txt)
+[out.txt](out.txt)
 
 ## Analyzed 
 1. Đề bài đọc file `text.txt` mà ta chưa có, tuy nhiên đoạn `out.txt` chính là đoạn `text.txt` sau khi ROT13
