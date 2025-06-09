@@ -39,10 +39,10 @@
 7. config
 
 ## Web exploition
-1. loopy
-2. TeXploit
-3. front-door
-4. hidden-canvas
-5. double-nested
-6. chill-site
-7. markdown-renderer
+1. loopy ✅
+2. TeXploit ✅
+3. front-door ✅
+4. hidden-canvas ✅
+5. double-nested ❌
+6. chill-site ❌
+7. markdown-renderer ❌
