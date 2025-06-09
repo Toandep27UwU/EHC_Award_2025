@@ -15,10 +15,12 @@
 - Định lý: Cho $m_1,m_2,...,m_n$ các cặp đôi một nguyên tố cùng nhau $(m_i,m_j)=1$  và một hệ gồm $n$ phương trình
   
 ```math
-x \equiv a_1\ (mod\ m_1)\\
-x \equiv a_2\ (mod\ m_2)\\    
+\left\{\begin{array}{1}
+x\equiv a_1\ (mod\ m_1)\\
+x\equiv a_2\ (mod\ m_2)\\
 ...\\
-x \equiv a_n\ (mod\ m_n)\\
+x\equiv a_n\ (mod\ m_n)
+\end{array}\right.
 ```
 có một nghiệm duy nhất module $M$ với $M = m_1.m_2....m_n$
 - Lấy $b_i = \frac{M}{m_i}$ và $b_i^{'} \equiv b_i^{-1}\ (mod\ m_i)$ thì ta tìm được nghiệm $x$ duy nhất bằng công thức
@@ -29,7 +31,7 @@ x = \sum_{i=1}^n a_i.b_i.b_i^{'}\ (mod\ M)
     - Đáp ứng phương trình chính nó : $t_i \equiv a_i(mod\ m_i)$
     - Là tích của các module $m_j$ với $j \ne i$ để tránh trường hợp trùng đồng dư với các $t_j$ khác
 ```math
-t_i \equiv a_i\ (mod\ m_i)\\
+t_i \equiv a_i\ (mod\ m_i) \Rightarrow
 t_i \equiv 0\ (mod \ m_j) \ \forall \ j \ne\ i
 ```
 - Ta có: $t_i = a_i.b_i$ , tuy nhiên sau khi nhân với $b_i$ thì $t_i$ không còn đồng dư $a_i$ theo module $m_i$ nữa, cho nên ta cần tìm một số $k$ sao cho:
