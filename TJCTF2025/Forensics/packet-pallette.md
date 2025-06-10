@@ -13,6 +13,11 @@ thử trích xuất playload tcp :
 tshark -r chall.pcapng -Y "tcp" -T fields -e tcp.payload > payload.txt
 
 để ý các kết quả của mỗi payload ( mỗi đoạn là một packet ) thì chính xác nó đã bị lặp lại đoạn "55534...01f4"
+
+![image](https://github.com/user-attachments/assets/c0da1b59-ae4d-4a27-9987-a93f882ec7fa)
+
+mình có lấy đoạn packet thứ 2 để decode thì mình biết được đoạn hex bị lặp lại mỗi đầu packet chính là "55534...01f4"
+
 và sau khi xoá phần thừa đi và nối các đoạn vào với nhau ta sẽ ra được ảnh chứa flag
 
 ![image](https://github.com/user-attachments/assets/6de41d1f-637a-4c4f-86f7-8278a8a584ba)
