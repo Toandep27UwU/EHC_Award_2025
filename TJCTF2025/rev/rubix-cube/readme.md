@@ -1,4 +1,4 @@
 # rubix-cube
 ## Description
-![description](Description.png)
+![description](description.png)
 
