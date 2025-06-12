@@ -16,7 +16,7 @@ Phân tích hình ảnh ta có thể thấy được dòng chữ tiếng Tây Ba
 - Colombia
 - ...
 
-- Bên cạnh đó trên đề bài có các chữ cái I C A O viết hoa ghép lại thành ICAO (International Civil Aviation Organization) là một hệ thống mã quốc tế do Tổ chức Hàng không Dân dụng Quốc tế (ICAO) quy định để xác định các sân bay, hãng hàng không và các cơ quan liên quan đến hàng không dân dụng. Mã ICAO được sử dụng trong các giao dịch và tài liệu liên quan đến hàng không để đảm bảo tính chính xác và đồng nhất quốc tế.
+- Bên cạnh đó trên đề bài có các chữ cái I C A O viết hoa ghép lại thành ICAO là một hệ thống mã quốc tế do Tổ chức Hàng không Dân dụng Quốc tế (ICAO) quy định để xác định các sân bay, hãng hàng không và các cơ quan liên quan đến hàng không dân dụng. Mã ICAO được sử dụng trong các giao dịch và tài liệu liên quan đến hàng không để đảm bảo tính chính xác và đồng nhất quốc tế.
 
 ## Solution
 Ta sử dụng Wikipedia để liệt kê các sân bay cùng với tên viết tắt của một số nước trên và thử FLAG:
