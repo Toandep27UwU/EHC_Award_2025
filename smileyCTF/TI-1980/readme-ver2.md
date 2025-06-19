@@ -9,6 +9,11 @@ Và tôi thấy nó là 1 dạng để chúng ta nhập code python vào rồi t
 Tôi sẽ thử với câu lệnh python đơn giản `print("he he he") `
 ![image](https://github.com/user-attachments/assets/8d91fcdc-5b05-453f-9a5b-83bc95b964b4)
 
+Sau 1 hồi tìm hiểu thì tôi mới biết trang web này nó như là 1 chiếc máy tính dùng để tính toán 
+
+![image](https://github.com/user-attachments/assets/8b947883-d03f-424c-8e9d-56c935e0c554)
+
+Nhưng ta vẫn chưa thu được thông tin hữu ích cho lắm
 
 Bây giờ chúng ta sẽ cùng đi phân tích source code mà chall đã cấp cho chúng ta.
 
@@ -139,6 +144,13 @@ Và điều quan trọng và là mấu chốt của bài bây giờ mới xuất
 
 Và đầu vào outphut_tml chính là 1 nơi thích hợp để cho ta có thể truyền untrusted data vào.
 
+Và ta có thể kết luận rằng , trang web này đã bị nhiễm lỗ hổng OS Command Injection
+
+1 vài nét quan trọng về lỗ hổng OSCommand Injection : 
+
+OSCommand chính là lỗ hổng được tạo ra do dev sử dụng các hàm nguy hiểm như `os.popen` để thực hiện lệnh hệ thống.
+
+Hacker sẽ lợi dụng nó để có thể đọc và thực thi được các file tệp quan trọng trong hệ thống
 
 
 # **EXPLOIT**
