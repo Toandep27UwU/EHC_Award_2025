@@ -22,6 +22,38 @@ def dashboard():
     user_notes = [(nid, notes[nid]['title'], notes[nid]['content']) for nid in notes if notes[nid]['owner'] == g.user]
 ```
 
+Và tôi sẽ đưa những dữ liệu này cho gpt để nhờ nó gen ra cách dịch ngược lại mã hóa để tạo ra cookie giả mao.
+```
+@app.route('/development/cookie-verify', methods=['POST'])
+@login_required
+@moderator_required
+@development_routes_required
+def verify_cookie():
+    """
+    Development route to validat the signature of the cookie is valid.
+    """
+    data = request.json.get('cookie')
+    try:
+        data = pickle.loads(base64.b64decode(data))
+    except Exception as e:
+        return "Invalid data :/", 400
+
+    value = data.get('value')
+    signature = data.get('signature')
+
+    if not value or not signature:
+        return "Missing signature or value", 400
+
+    secret_key = app.secret_key.encode()
+    expected_signature = hashlib.sha256((value + secret_key.decode()).encode()).hexdigest()
+
+    if expected_signature != signature:
+        return "Invalid signature", 400
+
+    return "Valid Cookie!", 200
+```
+
+
 Trong main.py, đoạn mã sau cho thấy Flask lưu session thông qua session['user']:
 ```
 session['user'] = {
