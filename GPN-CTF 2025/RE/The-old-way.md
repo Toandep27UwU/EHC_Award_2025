@@ -44,6 +44,82 @@ vì giá trị của v3 duyệt qua input của người dùng từ 0-40 nên ta
 lúc này có vẻ các giá trị đều dễ nhìn hơn rồi, mình làm thêm bước nữa là ấn **H** thì các giá trị từ **hexadecimal** sẽ chuyển qua **decimal** 
 sau đó chúng ta chỉ cần lấy chúng để reverse flag đúng từ FLAG[].
 
+```
+from z3 import *
+
+
+
+flag_data = [
+    68303,
+    136428,
+    204420,
+    272424,
+    339770,
+    407724,
+    472591,
+    539952,
+    606861,
+    673840,
+    745943,
+    806808,
+    870272,
+    935480,
+    1006035,
+    1069664,
+    1136637,
+    1194768,
+    1268421,
+    1329480,
+    1398369,
+    1450988,
+    1536630,
+    1611600,
+    1658100,
+    1741896,
+    1761534,
+    1863512,
+    1917248,
+    1990020,
+    2028299,
+    2134720,
+    2165955,
+    2228768,
+    2308565,
+    2320200,
+    2453174,
+    2527456,
+    2531217,
+    2534960
+]
+solver = Solver()
+
+s = [BitVec(f's_{i}',8) for i in range(40)]
+
+
+def main():
+    for i in range(40):
+        term = 0
+        for j in range(40):
+            if i == j:
+                continue
+            term += (j*i +j +i + 1) * ZeroExt(8,s[j])
+
+        solver.add(term == flag_data[i])
+    for byte in s:
+        solver.add(byte >= 0x20, byte <= 0x7E)    
+    if solver.check() == sat:
+        model = solver.model()
+        secret_bytes = []
+        for i in range(40):
+            byte_val = model[s[i]].as_long()
+            secret_bytes.append(byte_val)
+        secret_str = ''.join(chr(b) for b in secret_bytes)
+        print(f"Secret: {secret_str}")
+
+if __name__ == "__main__":
+    main()
+```
+
 và khi mình đưa các giá trị vô và chạy script thì nó sẽ trả về secret và lấy được flag 
 ![image](https://github.com/user-attachments/assets/e1b5dcc2-b041-4994-a03b-0d29ca133de6)
 
