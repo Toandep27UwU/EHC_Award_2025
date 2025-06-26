@@ -26,7 +26,14 @@ Có thể hình dung chỗ code này theo biểu thức như sau
 
 ![image](https://github.com/user-attachments/assets/cc5bea95-c987-4157-8127-80ac29f42af6)
 
-Từ đó tôi suy ra được hệ phương trình gồm 40 ẩn, mỗi ẩn là 1 kí tự của flag, để giải nhiều ẩn thì sử dụng thư viện z3 trong python, tôi có đoạn script bé bé xinh xinh ở đây:
+Ở FLAG thì là array gồm những giá trị này ở dạng decimal:
+
+![image](https://github.com/user-attachments/assets/fd7fd6b1-419c-4a77-af8b-979bb6473b8a)
+
+# Khai Thác
+
+Từ đó tôi suy ra được hệ phương trình gồm 40 ẩn, mỗi ẩn là 1 kí tự của flag, để giải nhiều ẩn thì sử dụng thư viện z3 trong python, tôi có đoạn code bé bé xinh xinh do chatgpt làm hộ ở đây:
+
 ```
 from z3 import *
 
@@ -71,6 +78,7 @@ else:
     print("Khong biet lam")
 ```
 
+Chạy đoạn code trên là ra được flag:
 
-
+![image](https://github.com/user-attachments/assets/e7cee188-a5f6-43d4-98d5-6a5662b7a980)
 
