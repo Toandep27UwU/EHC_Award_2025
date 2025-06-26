@@ -119,6 +119,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+script sử dụng thư viện z3 và tính theo công thức `FLAG[i] - (i+1)*(0+1)*s[0] - (i+1)*(1+1)*s[1] - ... - (i+1)*(44+1)*s[44] = 0`               
 
 và khi mình đưa các giá trị vô và chạy script thì nó sẽ trả về secret và lấy được flag 
 ![image](https://github.com/user-attachments/assets/e1b5dcc2-b041-4994-a03b-0d29ca133de6)
