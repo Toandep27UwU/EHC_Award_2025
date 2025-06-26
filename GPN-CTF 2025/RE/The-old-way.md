@@ -98,13 +98,13 @@ s = [BitVec(f's_{i}',8) for i in range(40)]
 
 def main():
     for i in range(40):
-        term = 0
+        s = 0
         for j in range(40):
             if i == j:
                 continue
-            term += (j*i +j +i + 1) * ZeroExt(8,s[j])
+            s += (j*i +j +i + 1) * ZeroExt(8,s[j])
 
-        solver.add(term == flag_data[i])
+        solver.add(s == flag_data[i])
     for byte in s:
         solver.add(byte >= 0x20, byte <= 0x7E)    
     if solver.check() == sat:
