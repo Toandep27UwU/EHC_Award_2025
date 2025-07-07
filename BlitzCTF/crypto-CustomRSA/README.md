@@ -32,7 +32,8 @@ $$
 * Because  $$e_1$$  is a 256 bit number, we can factorize it to 2 prime numbers `x` and `z` , I use tool to factorize it and I have results after 3 minutes.
 
 ```
-// Some code
+x = 205985756524450894105569840071389752521
+z = 212007435030018912792096086712981924541
 ```
 
 *
