@@ -1,9 +1,12 @@
 # CustomRSA
 
 ## Description
-[Custom_RSA.py](Custom_RSA.py)
 
-[out_4.txt](out.txt)
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+[Custom\_RSA.py](Custom_RSA.py)
+
+[out\_4.txt](out.txt)
 
 ## Solution
 
@@ -18,8 +21,8 @@ n = p\ .\ q\ .\ y
 \end{cases}
 $$
 
-* Because `x, y, z, p, q, y` are prime numbers, we have `GCD(e,n) = y`&#x20;
-* So we can find&#x20;
+* Because `x, y, z, p, q, y` are prime numbers, we have `GCD(e,n) = y`
+* So we can find
 
 $$
 \begin{cases}
@@ -28,14 +31,14 @@ n_1 = p\ .\ q\
 \end{cases}
 $$
 
-* Because  $$e_1$$  is a 256 bit number, we can factorize it to 2 prime numbers `x` and `z` , I use tool to factorize it and I have results after 3 minutes.
+* Because $$e_1$$ is a 256 bit number, we can factorize it to 2 prime numbers `x` and `z` , I use tool to factorize it and I have results after 3 minutes.
 
 ```
 x = 205985756524450894105569840071389752521
 z = 212007435030018912792096086712981924541
 ```
 
-* After that, we use Chinese Remainder Theorem to find `p`  from 2 equation:
+* After that, we use Chinese Remainder Theorem to find `p` from 2 equation:
 
 $$
 \begin{cases}
@@ -94,4 +97,3 @@ print(plain)
 ```
 Blitz{H0w_D4r3_y0u_br34k_My_RSA_Ag41n!!!}
 ```
-
