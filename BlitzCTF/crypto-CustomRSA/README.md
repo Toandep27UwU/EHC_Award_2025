@@ -13,7 +13,7 @@
 1. First, I see 2 equations
 
 $$
-e = x\ .\ y\ .\ z\\ n=p\ .\ q\ .\ y
+e = x\ .\ y\ .\ z \\ n=p\ .\ q\ .\ y
 $$
 
 * Because `x, y, z, p, q, y` are prime numbers, we have `GCD(e,n) = y`&#x20;
