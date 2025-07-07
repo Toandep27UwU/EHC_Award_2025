@@ -4,7 +4,9 @@
 
 <figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
+[crypto1.py](crypto1.py)
 
+[crypto1_out.txt](crypto1_out.txt)
 
 ## Solution
 
