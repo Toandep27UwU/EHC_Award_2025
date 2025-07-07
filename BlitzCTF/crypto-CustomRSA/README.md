@@ -36,4 +36,13 @@ x = 205985756524450894105569840071389752521
 z = 212007435030018912792096086712981924541
 ```
 
-* After that,&#x20;
+* After that, we use Chinese Remainder Theorem to find `p`  from 2 equation:
+
+$$
+\begin{cases}
+p \equiv hint1\ (mod\ x) \\
+p \equiv hint2\ (mod\ z)
+\end{cases}
+$$
+
+* After having `p`, we can find `q` and decode RSA easily.
