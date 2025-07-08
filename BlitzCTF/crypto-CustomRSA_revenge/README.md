@@ -10,7 +10,7 @@
 
 ## Solution
 
-1. Analyzed
+1. **Analyzed**
 
 * In this challenge, you can see a huge hole when you expose `mod_phi = (p-1)(q-1)(e-1)` ,we can completely bruteforce the intervals to find e and from there get `phi = (p-1)(q-1)`&#x20;
 * After get `phi`, we use **Viète Theorem** to solve the problem:
@@ -32,7 +32,7 @@ $$
 
 
 
-2. Script
+2. **Script**
 
 ```python
 from math import isqrt
