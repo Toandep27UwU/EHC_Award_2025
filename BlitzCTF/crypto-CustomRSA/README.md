@@ -6,7 +6,7 @@
 
 [Custom\_RSA.py](Custom_RSA.py)
 
-[out\_4.txt](out.txt)
+[out\_4.txt](out_4.txt)
 
 ## Solution
 
