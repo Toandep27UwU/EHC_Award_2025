@@ -6,7 +6,7 @@
 
 <figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-{% file src=".gitbook/assets/matrix.py" %}
+[matrix.py](https://github.com/Toandep27UwU/EHC_Award_2025/blob/main/week7-research1/crypto/.gitbook/assets/matrix.py)
 
 ## Analyzed
 
