@@ -6,6 +6,7 @@
 
 {% file src=".gitbook/assets/add_round_key.py" %}
 
+
 ## Analyzed
 
 **KeyExpansion**: generates multiple subkeys from the master key to be used in each round, ensuring each round has its own “secret” part.
