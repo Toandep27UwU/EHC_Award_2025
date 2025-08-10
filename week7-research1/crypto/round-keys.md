@@ -5,8 +5,7 @@
 <figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 
-{% file src=".gitbook/assets/add_round_key.py" %}
-
+[add_round_key](https://github.com/Toandep27UwU/EHC_Award_2025/blob/main/week7-research1/crypto/.gitbook/assets/add_round_key.py)
 
 ## Analyzed
 
