@@ -7,3 +7,4 @@
 * [Round Keys](round-keys.md)
 * [Confusion through Substitution](confusion-through-substitution.md)
 * [Diffusion through Permutation](diffusion-through-permutation.md)
+* [Bringing It All Together](bringing-it-all-together.md)
