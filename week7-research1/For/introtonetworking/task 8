@@ -1,0 +1,24 @@
+1. What is DNS short for?
+answer : domain name system
+DNS là hệ thống dịch tên miền (domain) thành địa chỉ IP, giúp người dùng truy cập website bằng tên dễ nhớ thay vì dãy số IP
+
+2. What is the first type of DNS server your computer would query when you search for a domain?
+answer : recursive
+DNS recursive server là máy chủ đầu tiên mà máy tính của bạn hỏi khi cần phân giải tên miền. Nó sẽ tìm câu trả lời bằng cách truy vấn các DNS server khác nếu chưa có trong cache
+
+3. What type of DNS server contains records specific to domain extensions (.com, .co.uk, etc.)?
+answer : top-level domain
+TLD server quản lý các bản ghi tên miền thuộc một phần mở rộng cụ thể (.com, .org, .net…). Khi truy vấn, nó sẽ chỉ định authoritative server cho tên miền đó
+
+4. Where is the very first place your computer would look to find the IP address of a domain?
+answer : hosts file
+Máy tính kiểm tra file hosts trước tiên để xem có ánh xạ thủ công từ tên miền sang IP không, trước khi gửi truy vấn DNS
+
+5. Google runs two public DNS servers. One is 8.8.8.8, what is the other?
+answer : 8.8.4.4
+Đây là 2 địa chỉ DNS public của Google, miễn phí và phổ biến, hỗ trợ phân giải tên miền nhanh chóng
+
+6. If a DNS query has a TTL of 24 hours, what number would the dig query show?
+answer : 86400
+
+24h là thời gian bản ghi DNS được cache trước khi hết hạn
