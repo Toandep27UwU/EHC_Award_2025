@@ -12,3 +12,11 @@
 8. ta dùng -v
 
 9. cái này mình dùng man ping sẽ có và mình ngồi đọc trong đó là ra
+
+<img width="871" height="1884" alt="image" src="https://github.com/user-attachments/assets/087a72f3-cf80-44ff-9c7b-951e902a9dee" />
+
+task 6 tương tự khi dùng man traceroute
+Which layer of the TCP/IP model will traceroute run on by default (Windows)?
+answer : internet
+Traceroute trên Windows dùng ICMP, thuộc Internet Layer của TCP/IP, để gửi gói tin và nhận phản hồi từ các router nhằm xác định đường đi
+
