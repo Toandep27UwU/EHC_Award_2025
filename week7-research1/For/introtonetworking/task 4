@@ -1,0 +1,39 @@
+1. Which model was introduced first, OSI or TCP/IP?
+answer : TCP/IP
+TCP/IP model được giới thiệu vào những năm 1970, trước OSI model (ra mắt vào đầu những năm 1980). TCP/IP được phát triển thực tế để phục vụ mạng ARPANET
+
+2. Which layer of the TCP/IP model covers the functionality of the Transport layer of the OSI model?
+answer : transport
+TCP/IP model cũng có một Transport Layer, tương tự OSI, đảm nhiệm truyền dữ liệu end-to-end, đảm bảo độ tin cậy (TCP) hoặc tốc độ (UDP)
+
+3. Which layer of the TCP/IP model covers the functionality of the Session layer of the OSI model?
+answer : application
+Trong TCP/IP, Application Layer gộp chức năng của OSI Application, Presentation, và Session Layer, bao gồm cả việc quản lý các phiên kết nối
+
+4. The Network Interface layer of the TCP/IP model covers the functionality of two layers in the OSI model. These layers are Data Link, and?
+answer : physical
+Network Interface Layer tương ứng với cả Data Link Layer và Physical Layer trong OSI, đảm nhận truyền dữ liệu qua phần cứng và định dạng frame
+
+5. Which layer of the TCP/IP model handles the functionality of the OSI Network Layer?
+answer : internet
+Internet Layer trong TCP/IP chịu trách nhiệm định tuyến và định địa chỉ logic (IP), tương ứng với OSI Network Layer
+
+6. What kind of protocol is TCP?
+answer : connection-based
+TCP là giao thức hướng kết nối (connection-oriented), yêu cầu thiết lập kết nối trước khi truyền dữ liệu, đảm bảo độ tin cậy
+
+7. What is SYN short for?
+answer : Synchronise
+SYN là cờ trong TCP header để đồng bộ số thứ tự ban đầu khi bắt đầu kết nối
+
+8. What is the second step of the three-way handshake?
+answer : SYN/ANK
+Ba bước của TCP three-way handshake:
+	Client -> Server: SYN
+	Server -> Client: SYN/ACK
+	Client -> Server: ACK
+
+9. What is the short name for the “Acknowledgement” segment in the three-way handshake?
+answer : ANK
+ACK là cờ trong TCP header báo hiệu đã nhận thành công dữ liệu hoặc tín hiệu từ phía bên kia
+
