@@ -1,0 +1,46 @@
+1.Which layer would choose to send data over TCP or UDP?
+answer : 4 
+Transport layer lựa chọn giao thức truyền dữ liệu như TCP hoặc UDP. Nó quyết định phương thức truyền dựa trên yêu cầu về độ tin cậy, tốc độ, và thứ tự dữ liệu
+
+
+2. Which layer checks received information to make sure it hasn’t been corrupted?
+answer : 2
+Data Link Layer kiểm tra lỗi ở mức frame thông qua cơ chế như CRC (Cyclic Redundancy Check), đảm bảo dữ liệu chưa bị hỏng khi truyền qua physical medium
+
+3. In which layer would data be formatted in preparation for transmission?
+answer : 2
+Tại Data Link Layer, dữ liệu được đóng gói thành các frame để truyền qua physical medium, bao gồm định dạng header, trailer và chuẩn giao tiếp
+
+4. Which layer transmits and receives data?
+answer : 1 
+Physical Layer chịu trách nhiệm truyền và nhận các bit (0 và 1) dưới dạng tín hiệu điện, quang hoặc sóng radio qua cáp hoặc không dây
+
+5. Which layer encrypts, compresses, or otherwise transforms the initial data to give it a standardised format?
+answer : 6
+Presentation Layer xử lý mã hóa, nén dữ liệu, và định dạng dữ liệu để đảm bảo hệ thống gửi và nhận có thể hiểu được
+
+6. Which layer tracks communications between the host and receiving computers?
+answer : 5
+Session Layer quản lý và theo dõi các phiên kết nối, đảm bảo rằng dữ liệu được trao đổi đúng phiên làm việc và theo thứ tự
+
+7. Which layer accepts communication requests from applications?
+answer : 7
+Application Layer là nơi ứng dụng người dùng tương tác trực tiếp với network services như HTTP, FTP, SMTP
+
+8. Which layer handles logical addressing? 
+answer : 3
+Network Layer sử dụng địa chỉ logic (như IP address) để định tuyến gói tin qua mạng
+
+9. When sending data over TCP, what would you call the "bite-sized" pieces of data?
+answer : segments
+Trong TCP, dữ liệu được chia thành các segments để quản lý truyền tải và đảm bảo trật tự
+
+10. Which layer would the FTP protocol communicate with?
+answer : 7
+FTP là giao thức ứng dụng, hoạt động ở Application Layer để truyền file giữa các hệ thống
+
+11. Which transport layer protocol would be best suited to transmit a live video?
+answer : UDP
+UDP thích hợp cho video trực tiếp vì nó ưu tiên tốc độ hơn là độ tin cậy, tránh trễ do kiểm tra lỗi và retransmission
+
+
