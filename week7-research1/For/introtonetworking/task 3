@@ -1,0 +1,19 @@
+1. How would you refer to data at Layer 2 of the encapsulation process (with the OSI model)?
+answer : frames
+Ở Data Link Layer, dữ liệu được đóng gói thành frames. Mỗi frame bao gồm header và trailer, phục vụ mục đích định danh, kiểm tra lỗi, và điều khiển luồng dữ liệu
+
+2. How would you refer to data at Layer 4 of the encapsulation process (with the OSI model), if the UDP protocol has been selected?
+answer : datagrams
+Ở Transport Layer , nếu sử dụng UDP, đơn vị dữ liệu được gọi là datagram. Khác với TCP segments, datagrams không có cơ chế đảm bảo độ tin cậy và thứ tự
+
+3. What process would a computer perform on a received message?
+answer : de-encapsulation
+Khi máy thứ 2 nhận được tin nhắn, máy tính sẽ thực hiện gỡ bỏ từng lớp header/trailer theo thứ tự ngược lại so với lúc gửi, cho đến khi dữ liệu gốc được tái tạo
+
+4. Which is the only layer of the OSI model to add a trailer during encapsulation?
+answer : data link
+Data Link Layer là lớp duy nhất trong OSI model thêm trailer khi đóng gói dữ liệu. Trailer thường chứa thông tin Frame Check Sequence (FCS) để kiểm tra lỗi
+
+5. Does encapsulation provide an extra layer of security (Aye/Nay)?
+answer : aye
+Encapsulation có thể cung cấp một lớp bảo mật bổ sung, vì dữ liệu được gói trong nhiều lớp header/trailer, giúp che giấu nội dung gốc và hỗ trợ cơ chế bảo mật như mã hóa ở các lớp trên.
