@@ -36,7 +36,7 @@ Mặc định: không kết thúc ván ở i --> dp[i] = dp[i-1]
 Nếu i ≥ t: có thể có một ván kết thúc ở i, bắt đầu tại i - t + 1
 
 ```dp[i] = max(dp[i],
-            dp[i - t] + gain[i - t + 1])
+            dp[i - t] + gain[i - t + 1])```
 
 Kết quả là dp[n]
 Ván dài t kết thúc ở i thì bắt đầu ở i - t + 1. Lợi ích ván đó là gain tại thời điểm bắt đầu nên ta có chỉ số i - t + 1
