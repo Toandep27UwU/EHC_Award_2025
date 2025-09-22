@@ -1,4 +1,4 @@
-# Free Candy [crypto] - Writeup (Tiếng Việt)
+# Free Candy [crypto] - Writeup 
 
 ## Tóm tắt đề
 Challenge có một RNG được định nghĩa bởi đại số quaternion trên prime p. Service tạo **2 bản sao RNG** với cùng tham số q:
@@ -29,7 +29,7 @@ trong đó:
 - `B = r * s^{-1} mod n`
 - `z = sha256(m) mod n`
 
-👉 Như vậy, từ mỗi chữ ký, ta thu được một **hàm tuyến tính theo private key d**:
+Như vậy, từ mỗi chữ ký, ta thu được một **hàm tuyến tính theo private key d**:
 ```
 Ai(d) = ai + Bi d
 ```
@@ -89,11 +89,111 @@ Nếu khớp ⇒ nghiệm đúng ⇒ tìm được private key thật.
 
 ---
 
-## Vấn đề thực tế
-Server **chỉ cấp ticket mới nếu ticket_id là số chẵn**.  
-Mà ta lại cần **3 ticket chẵn liên tiếp** để giải được hệ ⇒ xác suất chỉ **1/8** để gặp chuỗi “may mắn” này.
+## Script
 
-Do đó, phải spam khá nhiều request cho đến khi lấy được 3 vé chẵn liên tiếp. Sau khi có, chạy solver sẽ ra key và sign flag.
+```
+from os import environ
+environ["TERM"] = "xterm"
+from pwn import context, remote
+from hashlib import sha256
+from base64 import b64encode, b64decode
+import json
+
+context.log_level = "warning"
+host = "0.cloud.chals.io"
+port = int(19521)
+
+
+def rec():
+    return conn.recvlineS(False)
+
+def send(tid, h, r, s):
+    payload = {"ticket_id": tid}
+    sig = r.to_bytes(32) + s.to_bytes(32)
+    ticket = {
+        "payload": payload,
+        "signature": sig.hex()
+    }
+    conn.sendlineafter(b": \n", b64encode(json.dumps(ticket).encode()))
+
+def parse(data):
+    ticket = json.loads(b64decode(data))
+    payload = ticket["payload"]
+    tid = payload["ticket_id"]
+    h = int.from_bytes(sha256(json.dumps(payload).replace(" ", "").encode()).digest())
+    sig = bytes.fromhex(ticket["signature"])
+    r = int.from_bytes(sig[:32])
+    s = int.from_bytes(sig[32:])
+    return tid, h, r, s
+
+def option(choice):
+    conn.sendlineafter(b"prize\n\n", str(choice).encode())
+
+
+while True:
+    conn = remote(host, port)
+
+    option(1)
+    tickets = [parse(rec())]
+
+    for _ in range(3):
+        option(2)
+        send(*tickets[-1])
+        output = rec()
+        if not "ticket" in output:
+            break
+        tickets.append(parse(output.split()[-1]))
+
+    if len(tickets) == 4:
+        break
+
+tid, h, r, s = zip(*tickets)
+
+p = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+F = GF(p)
+A = matrix(F, [
+    [tid[1], -tid[0]],
+    [tid[2], -tid[1]],
+])
+Y = vector(F, [
+    tid[2],
+    tid[3],
+])
+X = A.solve_right(Y)
+
+R.<t,n,h1,h2,h3,h4,r1,r2,r3,r4,s1,s2,s3,s4,k1,k2,k3,k4,d> = F[]
+eqs = [
+    k1 * s1 - h1 - r1 * d,
+    k2 * s2 - h2 - r2 * d,
+    k3 * s3 - h3 - r3 * d,
+    k4 * s4 - h4 - r4 * d,
+    k3 - t * k2 + n * k1,
+    k4 - t * k3 + n * k2,
+]
+
+t, n = map(int, X)
+vals = dict(zip(R.gens()[:-5], (t, n) + h + r + s))
+
+I = R.ideal([eq.subs(vals) for eq in eqs])
+G = I.groebner_basis()
+sol = {}
+for g in G:
+    if len(v := g.variables()) == 1:
+        sol[str(v[0])] = -g.constant_coefficient()
+d = sol["d"]
+
+tid = int.from_bytes(sha256(b"I'd like the flag please").digest())
+h = int.from_bytes(sha256(json.dumps({"ticket_id": tid}).replace(" ", "").encode()).digest())
+r = 0x79BE667EF9DCBBAC55A06295CE870B07029BFCDB2DCE28D959F2815B16F81798
+s = int((h + r * d) % p)
+
+option(2)
+send(tid, h, r, s)
+flag = conn.recvuntilS(b"}").split()[-1]
+print(flag)
+
+# FortID{W1nn3r_Winn3r_Ch1ck3n_D1nn3r_64277d4d7650896a}
+```
 
 ---
 
