@@ -91,7 +91,7 @@ Nếu khớp ⇒ nghiệm đúng ⇒ tìm được private key thật.
 
 ## Script
 
-```
+``` python3
 from os import environ
 environ["TERM"] = "xterm"
 from pwn import context, remote
